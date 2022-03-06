@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func main() {
+	// Main Refresh of GoLang Syntax
 	var x int
 	x = 8
 	y := 7
@@ -33,4 +35,22 @@ func main() {
 	for index, value := range s {
 		fmt.Println(index, value)
 	}
+
+	// Channels
+	// c := make(chan int)
+	// go doSomething(c)
+	// <-c
+
+	// pointers
+	g := 25
+	fmt.Println(g)
+	h := &g
+	fmt.Println(h)
+	fmt.Println(*h)
+}
+
+func doSomething(c chan int) {
+	time.Sleep(3 * time.Second)
+	fmt.Println("Done")
+	c <- 1
 }
